@@ -1,11 +1,9 @@
 services:
   searxng:
-    image: searxng/searxng:latest
+    build: .
     restart: unless-stopped
     ports:
       - "8888:8080"
-    volumes:
-      - ./settings.yml:/etc/searxng/settings.yml:ro
     environment:
       - SEARXNG_BASE_URL=http://localhost:8888/
     cap_drop:
