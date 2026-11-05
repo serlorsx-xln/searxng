@@ -10,3 +10,39 @@ search:
   formats:
     - html
     - json
+outgoing:
+  request_timeout: 8.0
+  max_request_timeout: 12.0
+  pool_connections: 100
+  pool_maxsize: 20
+# Engine curation for a datacenter IP (2026-11-05 probing):
+# google = hard "access denied", google cse = 429 -> disabled.
+# brave / duckduckgo throttle intermittently (self-recover via 180s suspend).
+# bing + qwant carry reliably; mojeek/startpage/ecosia/stract add diversity.
+engines:
+  - name: google
+    disabled: true
+  - name: google cse
+    disabled: true
+  - name: bing
+    disabled: false
+    weight: 2
+  - name: bing news
+    disabled: false
+  - name: qwant
+    disabled: false
+    weight: 2
+  - name: qwant news
+    disabled: false
+  - name: mojeek
+    disabled: false
+  - name: startpage
+    disabled: false
+  - name: ecosia
+    disabled: false
+  - name: stract
+    disabled: false
+  - name: duckduckgo
+    disabled: false
+  - name: brave
+    disabled: false
