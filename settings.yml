@@ -1,0 +1,12 @@
+use_default_settings: true
+server:
+  secret_key: "searxng-pool-7f3a9c1e5b2d8460f1e8a3c5b7d9e2f4"
+  limiter: false
+  image_proxy: true
+search:
+  safe_search: 0
+  autocomplete: "google"
+  default_lang: "th"
+  formats:
+    - html
+    - json
